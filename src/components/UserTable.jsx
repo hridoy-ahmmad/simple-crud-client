@@ -1,4 +1,5 @@
-import { Table } from '@heroui/react';
+import { Button, Table } from '@heroui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const UserTable = ({ users }) => {
@@ -8,9 +9,10 @@ const UserTable = ({ users }) => {
                 <Table.Content aria-label="Team members" className="min-w-[600px]">
                     <Table.Header>
                         <Table.Column isRowHeader>Name</Table.Column>
-                   
                         <Table.Column>Email</Table.Column>
                         <Table.Column>Status</Table.Column>
+                        <Table.Column>Action</Table.Column>
+
                     </Table.Header>
                     <Table.Body>
 
@@ -19,6 +21,18 @@ const UserTable = ({ users }) => {
                                 <Table.Cell>{user.name}</Table.Cell>
                                 <Table.Cell>{user.email}</Table.Cell>
                                 <Table.Cell>{user.address}</Table.Cell>
+                                <Table.Cell className={'flex gap-2'}>
+                                    <Button variant='outline'>
+                                        <Link href={`/users/${user._id}`}>Details</Link>
+                                    </Button>
+                                    <Button variant='outline'>
+                                        <Link href={`/users/${user._id}`}>Edit</Link>
+                                    </Button>
+                                    <Button variant='danger-soft'>
+                                        <Link href={`/users/${user._id}`}>Delete</Link>
+                                    </Button>
+                                </Table.Cell>
+
                             </Table.Row>)
                         }
 
