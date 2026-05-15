@@ -29,7 +29,6 @@ const AddUser = ({ addUser }) => {
                                             <Label>Email</Label>
                                             <Input placeholder="Enter your email" />
                                         </TextField>
-
                                         <TextField className="w-full" name="address">
                                             <Label>Address</Label>
                                             <Input placeholder="Enter your address" />
